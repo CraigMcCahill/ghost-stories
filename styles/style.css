@@ -17,6 +17,26 @@ ul.author-list {
   padding: 0;
 }
 
+section.story-list {
+  margin: 40px 0;
+}
+
+section.story-list ul {
+  padding: 0;
+}
+
+section.story-list li {
+  margin: 32px 0;
+}
+
+section.story-list h3 {
+  margin-bottom: 0;
+}
+
+section.story-list p {
+  margin-top: 8px;
+}
+
 li {
   list-style: none;
   margin: 16px 8px;
