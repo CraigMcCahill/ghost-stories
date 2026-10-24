@@ -77,6 +77,125 @@ ul.v_menu li a:focus {
   margin: 0 auto;
 }
 
+.site-nav-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  appearance: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 18px;
+  text-align: left;
+  user-select: none;
+}
+
+.site-nav-toggle:focus {
+  outline: none;
+}
+
+.site-nav-toggle:focus-visible {
+  outline: 2px solid #eee;
+  outline-offset: 2px;
+}
+
+.site-nav-burger {
+  position: relative;
+  width: 18px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.site-nav-burger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #eee;
+  border-radius: 1px;
+}
+
+.site-nav-burger span:nth-child(1) {
+  top: 0;
+}
+
+.site-nav-burger span:nth-child(2) {
+  top: 5px;
+}
+
+.site-nav-burger span:nth-child(3) {
+  top: 10px;
+}
+
+.site-nav-list li:nth-child(3) {
+  margin-top: 24px;
+}
+
+.site-nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .site-nav {
+    position: relative;
+    z-index: 2;
+    background: #121212;
+    border-bottom: 1px solid #444;
+  }
+
+  .site-nav-toggle {
+    position: relative;
+    z-index: 4;
+  }
+
+  .site-nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    margin: 0;
+    padding: 8px 8px 16px;
+    background: #121212;
+    border-bottom: 1px solid #444;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.55);
+  }
+
+  .site-nav.is-open .site-nav-list {
+    display: block;
+  }
+
+  .site-nav.is-open .site-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    padding: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 640px) {
+  .site-nav-toggle {
+    display: none;
+  }
+
+  .site-nav-list {
+    display: block;
+  }
+}
+
 img.cover-image {
   max-width: 100%;
   height: auto;

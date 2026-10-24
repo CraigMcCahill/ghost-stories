@@ -4,3 +4,9 @@
 *.afphoto
 *.docx
 Laborum laboris ullamco dolore officia a
+node_modules
+.next
+out
+build
+.react-router
+
