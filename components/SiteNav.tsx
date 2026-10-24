@@ -36,14 +36,14 @@ export default function SiteNav({ currentSlug }: SiteNavProps) {
 
   return (
     <nav className={open ? "site-nav is-open" : "site-nav"} aria-label="Site">
-      {open ? (
-        <button
-          type="button"
-          className="site-nav-backdrop"
-          aria-label="Close menu"
-          onClick={() => setOpen(false)}
-        />
-      ) : null}
+      <button
+        type="button"
+        className="site-nav-backdrop"
+        aria-label="Close menu"
+        aria-hidden={!open}
+        tabIndex={open ? 0 : -1}
+        onClick={() => setOpen(false)}
+      />
       <button
         type="button"
         className="site-nav-toggle"
