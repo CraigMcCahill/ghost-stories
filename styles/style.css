@@ -155,7 +155,7 @@ ul.v_menu li a:focus {
   }
 
   .site-nav-list {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
@@ -168,13 +168,21 @@ ul.v_menu li a:focus {
     background: #121212;
     border-bottom: 1px solid #444;
     box-shadow: 0 16px 28px rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
   }
 
   .site-nav.is-open .site-nav-list {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
-  .site-nav.is-open .site-nav-backdrop {
+  .site-nav-backdrop {
     display: block;
     position: fixed;
     inset: 0;
@@ -183,6 +191,23 @@ ul.v_menu li a:focus {
     border: 0;
     background: rgba(0, 0, 0, 0.45);
     cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.16s ease, visibility 0.16s;
+  }
+
+  .site-nav.is-open .site-nav-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav-list,
+  .site-nav-backdrop {
+    transition: none;
   }
 }
 
